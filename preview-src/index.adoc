@@ -6,6 +6,7 @@ Author Name
 :!table-caption:
 //:page-role: -toc
 :page-pagination:
+:stem: latexmath
 
 [.float-group]
 --
@@ -22,6 +23,13 @@ Vestibulum consectetur nec urna a luctus.
 Quisque pharetra tristique arcu fringilla dapibus.
 https://example.org[Curabitur,role=unresolved] ut massa aliquam, cursus enim et, accumsan lectus.
 Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
+
+== I am testing math.
+
+latexmath:[\sigma_I^2]
+
+stem:[\sin(\pi)]
+
 
 == Cu solet
 
