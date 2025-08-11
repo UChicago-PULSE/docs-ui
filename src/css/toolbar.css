@@ -91,6 +91,9 @@
     background: var(--color-smoke-50);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
+.night-mode-toggle:hover .theme-icon {
+    fill: var(--toolbar-font-color);
+}
 
 .theme-icon {
     width: 20px;
@@ -98,6 +101,7 @@
     stroke: var(--toolbar-font-color);
     fill: none;
     stroke-width: 1.5;
+    transition: fill 0.3s ease;
 }
 
 .sun-icon { display: inline; }
