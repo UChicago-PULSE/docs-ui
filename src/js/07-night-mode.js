@@ -1,23 +1,35 @@
-;(function () {
-  'use strict'
+(function () {
+  'use strict';
 
-  var currentTheme = localStorage.getItem('theme') || 'light'
-  document.documentElement.setAttribute('data-theme', currentTheme)
+  const storage = (typeof window !== 'undefined' && window.localStorage) ? window.localStorage : null;
+  const KEY = 'night-mode';
 
-  function bind() {
-    var toggle = document.querySelector('.night-mode-toggle')
-    if (!toggle) return
-    toggle.addEventListener('click', function () {
-      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
-      document.documentElement.setAttribute('data-theme', next)
-      localStorage.setItem('theme', next)
-    })
+  function setNightMode (enabled) {
+    const root = document.documentElement;
+    if (enabled) root.classList.add('night');
+    else root.classList.remove('night');
+    if (storage) storage.setItem(KEY, enabled ? '1' : '0');
   }
 
-  // Ensure the button exists before binding
+  function init () {
+    const saved = storage ? storage.getItem(KEY) : null;
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const enabled = saved === '1' || (saved === null && prefersDark);
+    setNightMode(enabled);
+
+    const toggle = document.querySelector('[data-night-toggle]');
+    if (toggle) {
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        const isOn = document.documentElement.classList.contains('night');
+        setNightMode(!isOn);
+      });
+    }
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', bind)
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    bind()
+    init();
   }
-})()
+})();
