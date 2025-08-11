@@ -26,8 +26,11 @@ jobs:
       - name: Run Gulp build
         run: npx gulp bundle
 
+      - name: Get short commit SHA
+        run: echo "SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
+
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.sha:0:7 }}
+          tag_name: ${{ env.SHORT_SHA }}
           files: build/ui-bundle.zip
