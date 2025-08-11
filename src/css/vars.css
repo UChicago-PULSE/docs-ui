@@ -148,7 +148,6 @@
   --z-index-navbar: 4;
 }
 
-// formatting
 [data-theme="dark"] {
   --color-white: #1a1a1a;
   --color-smoke-10: #222;
