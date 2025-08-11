@@ -66,3 +66,42 @@
 .toolbar .edit-this-page a {
   color: var(--toolbar-muted-color);
 }
+
+/* NIGHT MODE CSS STUFF */
+.night-mode-toggle {
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    min-height: 36px;
+    margin-right: 1rem;
+}
+
+.night-mode-toggle:hover {
+    background: var(--color-smoke-60);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+[data-theme="dark"] .night-mode-toggle:hover {
+    background: var(--color-smoke-50);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.theme-icon {
+    width: 20px;
+    height: 20px;
+    stroke: var(--toolbar-font-color);
+    fill: none;
+    stroke-width: 1.5;
+}
+
+.sun-icon { display: inline; }
+.moon-icon { display: none; }
+
+[data-theme="dark"] .sun-icon { display: none; }
+[data-theme="dark"] .moon-icon { display: inline; }
