@@ -10,7 +10,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,3 +33,63 @@ jobs:
         with:
           tag_name: ${{ env.SHORT_SHA }}
           files: build/ui-bundle.zip
+
+  trigger-docs-rebuild:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate JWT for GitHub App
+        run: |
+          # Write private key to file
+          echo "${{ secrets.APP_PRIVATE_KEY }}" > key.pem
+
+          # Base64 encode without padding/newlines
+          b64enc() { openssl base64 -A | tr '+/' '-_' | tr -d '='; }
+
+          # Create JWT header & payload (valid 10 minutes)
+          header='{"alg":"RS256","typ":"JWT"}'
+          header_enc=$( echo -n "${header}" | b64enc )
+
+          now=$(date +%s)
+          iat=$((${now} - 60))  # 1 minute ago
+          exp=$((${now} + 540)) # 9 minutes from now
+          payload="{
+              \"iat\":${iat},
+              \"exp\":${exp},
+              \"iss\":\"${{ secrets.APP_CLIENT_ID }}\"
+          }"
+          payload_enc=$( echo -n "${payload}" | b64enc )
+
+          # Sign with private key
+          header_payload="${header_enc}"."${payload_enc}"
+          signature=$(
+              openssl dgst -sha256 -sign key.pem \
+              <(echo -n "${header_payload}") | b64enc
+          )
+
+          JWT="${header_enc}.${payload_enc}.${signature}"
+          echo "JWT=$JWT" >> $GITHUB_ENV
+
+      - name: Get installation access token
+        run: |
+          INSTALL_ID=$(curl -s \
+            -H "Authorization: Bearer $JWT" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository_owner }}/docs-site/installation \
+            | jq -r .id)
+
+          ACCESS_TOKEN=$(curl -s -X POST \
+            -H "Authorization: Bearer $JWT" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/app/installations/$INSTALL_ID/access_tokens \
+            | jq -r .token)
+
+          echo "ACCESS_TOKEN=$ACCESS_TOKEN" >> $GITHUB_ENV
+
+      - name: Send repository dispatch to Repo 2
+        run: |
+          curl -X POST \
+            -H "Authorization: token $ACCESS_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository_owner }}/docs-site/dispatches \
+            -d '{"event_type":"trigger-rebuild"}'
