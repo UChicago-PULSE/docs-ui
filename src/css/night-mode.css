@@ -1,5 +1,6 @@
 :root[data-theme="dark"] {
   color-scheme: dark;
+
   --color-white: #1a1a1a;
   --color-smoke-10: #222;
   --color-smoke-30: #2d2d2d;
