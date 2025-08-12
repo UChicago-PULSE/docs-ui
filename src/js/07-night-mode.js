@@ -3,7 +3,7 @@
   'use strict'
 
   const storage = (typeof window !== 'undefined' && window.localStorage) ? window.localStorage : null
-  const currentTheme = storage ? (storage.getItem('theme') || 'light') : 'light'
+  const currentTheme = (storage && storage.getItem('theme')) || 'light'
   document.documentElement.setAttribute('data-theme', currentTheme)
 
   function bind () {

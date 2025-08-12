@@ -1,0 +1,149 @@
+[data-theme="dark"] {
+  /* colors */
+  --color-white: #1a1a1a;
+  --color-smoke-10: #222;
+  --color-smoke-30: #2d2d2d;
+  --color-smoke-50: #404040;
+  --color-smoke-70: #525252;
+  --color-smoke-90: #333;
+  --color-gray-10: #666;
+  --color-gray-30: #888;
+  --color-gray-40: #999;
+  --color-gray-50: #aaa;
+  --color-gray-70: #ccc;
+  --color-jet-20: #ddd;
+  --color-jet-30: #e1e1e1;
+  --color-jet-50: #f0f0f0;
+  --color-jet-70: #f5f5f5;
+  --color-jet-80: #fafafa;
+  --color-black: #fff;
+  --ucsp-red: #600;
+  --ucsp-red-dark: #400;
+  /* fonts */
+  --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
+  --body-font-size: 1.0625em; /* 17px */
+  --body-font-size--desktop: 1.125em; /* 18px */
+  --body-font-size--print: 0.9375em; /* 15px */
+  --body-line-height: 1.15;
+  --body-font-color: #f5f5f5;
+  --body-font-family: "Roboto", sans-serif;
+  --body-font-weight-bold: 600;
+  --monospace-font-family: "Roboto Mono", monospace;
+  --monospace-font-weight-bold: 600;
+  --heading-font-family: "Poppins", sans-serif;
+  /* base */
+  --body-background: #1a1a1a;
+  --panel-background: #2d2d2d;
+  --panel-border-color: #333;
+  --scrollbar-track-color: #2d2d2d;
+  --scrollbar-thumb-color: #666;
+  --scrollbar_hover-thumb-color: #888;
+  /* navbar */
+  --navbar-background: #600;
+  --navbar-font-color: #fff;
+  --navbar_hover-background: #400;
+  --navbar-button-background: #2d2d2d;
+  --navbar-button-border-color: #333;
+  --navbar-button-font-color: #f5f5f5;
+  --navbar-menu-border-color: #333;
+  --navbar-menu-background: #1a1a1a;
+  --navbar-menu-font-color: #f5f5f5;
+  --navbar-menu_hover-background: #404040;
+  /* nav */
+  --nav-background: #2d2d2d;
+  --nav-border-color: #666;
+  --nav-line-height: 1.35;
+  --nav-heading-font-color: #e1e1e1;
+  --nav-muted-color: #ccc;
+  --nav-panel-divider-color: #333;
+  --nav-secondary-background: #525252;
+  /* toolbar */
+  --toolbar-background: #2d2d2d;
+  --toolbar-border-color: #333;
+  --toolbar-font-color: #ccc;
+  --toolbar-muted-color: #999;
+  --page-version-menu-background: #525252;
+  --page-version-missing-font-color: #999;
+  /* admonitions */
+  --caution-color: #ba68c8;
+  --caution-on-color: #1a1a1a;
+  --important-color: #f56565;
+  --important-on-color: #1a1a1a;
+  --note-color: #64b5f6;
+  --note-on-color: #1a1a1a;
+  --tip-color: #66bb6a;
+  --tip-on-color: #1a1a1a;
+  --warning-color: #ffa726;
+  --warning-on-color: #1a1a1a;
+  /* doc */
+  --doc-font-color: #f0f0f0;
+  --doc-font-size: inherit;
+  --doc-font-size--desktop: calc(17 / var(--rem-base) * 1rem);
+  --doc-line-height: 1.6;
+  --doc-margin: 0 auto;
+  --doc-margin--desktop: 0 2rem;
+  --heading-font-color: #fafafa;
+  --heading-font-weight: 600;
+  --alt-heading-font-weight: 600;
+  --section-divider-color: #333;
+  --link-font-color: #64b5f6;
+  --link_hover-font-color: #42a5f5;
+  --link_unresolved-font-color: #f56565;
+  --abstract-background: #525252;
+  --abstract-font-color: #ddd;
+  --abstract-border-color: #333;
+  --admonition-background: #2d2d2d;
+  --admonition-label-font-weight: 600;
+  --caption-font-color: #ccc;
+  --caption-font-style: italic;
+  --caption-font-weight: 600;
+  --code-background: #2d2d2d;
+  --code-font-color: #f5f5f5;
+  --example-background: #1a1a1a;
+  --example-border-color: #ccc;
+  --kbd-background: #2d2d2d;
+  --kbd-border-color: #666;
+  --pre-background: #2d2d2d;
+  --pre-border-color: #333;
+  --pre-annotation-font-color: #aaa;
+  --quote-background: #2d2d2d;
+  --quote-border-color: #ccc;
+  --quote-font-color: #ccc;
+  --quote-attribution-font-color: #999;
+  --sidebar-background: #333;
+  --table-border-color: #333;
+  --table-stripe-background: #2d2d2d;
+  --table-footer-background: linear-gradient(to bottom, #525252 0%, #1a1a1a 100%);
+  /* toc */
+  --toc-font-color: #ccc;
+  --toc-heading-font-color: #f0f0f0;
+  --toc-border-color: #333;
+  --toc-line-height: 1.2;
+  /* footer */
+  --footer-line-height: 1.6;
+  --footer-background: #333;
+  --footer-font-color: #ccc;
+  --footer-link-font-color: #fafafa;
+  /* dimensions and positioning - these stay the same */
+  --navbar-height: calc(63 / var(--rem-base) * 1rem);
+  --toolbar-height: calc(45 / var(--rem-base) * 1rem);
+  --drawer-height: calc(45 / var(--rem-base) * 1rem);
+  --body-top: calc(63 / var(--rem-base) * 1rem);
+  --body-min-height: calc(100vh - calc(63 / var(--rem-base) * 1rem));
+  --nav-height: calc(calc(100vh - calc(63 / var(--rem-base) * 1rem)) - calc(45 / var(--rem-base) * 1rem));
+  --nav-height--desktop: calc(100vh - calc(63 / var(--rem-base) * 1rem));
+  --nav-panel-menu-height: calc(100% - calc(45 / var(--rem-base) * 1rem));
+  --nav-panel-explore-height: calc(50% + calc(45 / var(--rem-base) * 1rem));
+  --nav-width: calc(270 / var(--rem-base) * 1rem);
+  --toc-top: calc(calc(63 / var(--rem-base) * 1rem) + calc(45 / var(--rem-base) * 1rem));
+  --toc-height: calc(100vh - calc(calc(63 / var(--rem-base) * 1rem) + calc(45 / var(--rem-base) * 1rem)) - 2.5rem);
+  --toc-width: calc(162 / var(--rem-base) * 1rem);
+  --toc-width--widescreen: calc(216 / var(--rem-base) * 1rem);
+  --doc-max-width: calc(720 / var(--rem-base) * 1rem);
+  --doc-max-width--desktop: calc(828 / var(--rem-base) * 1rem);
+  /* stacking */
+  --z-index-nav: 1;
+  --z-index-toolbar: 2;
+  --z-index-page-version-menu: 3;
+  --z-index-navbar: 4;
+}
