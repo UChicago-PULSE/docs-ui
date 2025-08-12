@@ -111,7 +111,6 @@
   top: calc((var(--nav-line-height) - 1 + 0.5) * 1rem);
   visibility: hidden;
   width: 1em;
-
   color: var(--navbar-font-color);
 }
 

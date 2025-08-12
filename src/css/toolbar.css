@@ -20,7 +20,6 @@
   /* background: url(../img/menu.svg) no-repeat 50% 47.5%;
   background-size: 49%; */
   background: transparent;
-  border: none;
   outline: none;
   line-height: inherit;
   height: calc(var(--toolbar-height) / 2);
@@ -31,7 +30,6 @@
   margin-left: 0.5rem;
   margin-right: 0.15rem;
   color: var(--toolbar-font-color);
-
   border: none;
   border-radius: 6px;
   padding: calc(var(--toolbar-height) / 6);
@@ -76,14 +74,12 @@
   display: inline;
 }
 
-
 .home-link {
   display: block;
   /* background: url(../img/home-o.svg) no-repeat center; */
   height: calc(var(--toolbar-height) / 2);
   width: calc(var(--toolbar-height) / 2);
   box-sizing: content-box;
-
   border: none;
   border-radius: 6px;
   padding: 8px;
