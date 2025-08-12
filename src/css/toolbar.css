@@ -17,15 +17,36 @@
 }
 
 .nav-toggle {
-  background: url(../img/menu.svg) no-repeat 50% 47.5%;
-  background-size: 49%;
+  /* background: url(../img/menu.svg) no-repeat 50% 47.5%;
+  background-size: 49%; */
+  background: transparent;
   border: none;
   outline: none;
   line-height: inherit;
-  padding: 0;
-  height: var(--toolbar-height);
-  width: var(--toolbar-height);
-  margin-right: -0.25rem;
+  height: calc(var(--toolbar-height) / 2);
+  width: calc(var(--toolbar-height) / 2);
+  box-sizing: content-box;
+  /* margin: calc(var(--toolbar-height) / 4); */
+  /* margin-right: -0.15rem; */
+  margin-left: 0.5rem;
+  margin-right: 0.15rem;
+  color: var(--toolbar-font-color);
+
+  border: none;
+  border-radius: 6px;
+  padding: calc(var(--toolbar-height) / 6);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-toggle:hover {
+  background: var(--color-smoke-60);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .nav-toggle:hover {
+  background: var(--color-smoke-50);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 @media screen and (min-width: 1024px) {
@@ -34,22 +55,60 @@
   }
 }
 
-.nav-toggle.is-active {
-  background-image: url(../img/back.svg);
-  background-size: 41.5%;
+.nav-toggle svg {
+  width: 100%;
+  height: 100%;
 }
+
+.nav-toggle .nav-toggle-open {
+  display: inline;
+}
+
+.nav-toggle .nav-toggle-back {
+  display: none;
+}
+
+.nav-toggle.is-active .nav-toggle-open {
+  display: none;
+}
+
+.nav-toggle.is-active .nav-toggle-back {
+  display: inline;
+}
+
 
 .home-link {
   display: block;
-  background: url(../img/home-o.svg) no-repeat center;
+  /* background: url(../img/home-o.svg) no-repeat center; */
   height: calc(var(--toolbar-height) / 2);
   width: calc(var(--toolbar-height) / 2);
-  margin: calc(var(--toolbar-height) / 4);
+  box-sizing: content-box;
+
+  border: none;
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.home-link:hover,
-.home-link.is-current {
-  background-image: url(../img/home.svg);
+.home-link:hover {
+  background: var(--color-smoke-60);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .home-link:hover {
+  background: var(--color-smoke-50);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.home-link svg {
+  fill: none;
+  stroke: currentColor;
+}
+
+.home-link:hover svg,
+.home-link.is-current svg {
+  fill: currentColor;
 }
 
 .edit-this-page {
@@ -72,7 +131,7 @@
   background: transparent;
   border: none;
   border-radius: 6px;
-  padding: 8px;
+  padding: calc(var(--toolbar-height) / 6);
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;

@@ -12,7 +12,7 @@
 
 .page-versions .version-menu-toggle {
   color: inherit;
-  background: url(../img/chevron.svg) no-repeat;
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%235d5d5d" viewBox="0 0 30 30"%3E<path style="opacity:1;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="M 3.6699219,6.5898438 1.4550781,8.6152344 15,23.374272 28.544922,8.6152344 26.330078,6.5898438 15,18.759498 Z" />%3C/svg%3E') no-repeat;
   background-position: right 0.5rem top 50%;
   background-size: auto 0.75em;
   border: none;
@@ -21,6 +21,12 @@
   padding: 0.5rem 1.5rem 0.5rem 0.5rem;
   position: relative;
   z-index: var(--z-index-page-version-menu);
+}
+
+[data-theme="dark"] .page-versions .version-menu-toggle {
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%23cccccc" viewBox="0 0 30 30"%3E<path style="opacity:1;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="M 3.6699219,6.5898438 1.4550781,8.6152344 15,23.374272 28.544922,8.6152344 26.330078,6.5898438 15,18.759498 Z" />%3C/svg%3E') no-repeat;
+  background-position: right 0.5rem top 50%;
+  background-size: auto 0.75em;
 }
 
 .page-versions .version-menu {

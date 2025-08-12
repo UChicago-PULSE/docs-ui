@@ -17,29 +17,6 @@
  sodipodi:docname="back.svg"
  enable-background="new">
 <title>Left arrow</title>
-<sodipodi:namedview
- pagecolor="#ffffff"
- bordercolor="#666666"
- borderopacity="1.0"
- inkscape:pageopacity="0.0"
- inkscape:pageshadow="2"
- inkscape:zoom="6.108138"
- inkscape:cx="21.142679"
- inkscape:cy="42.629076"
- inkscape:document-units="px"
- inkscape:current-layer="layer1"
- showgrid="false"
- units="px"
- fit-margin-top="0"
- fit-margin-left="0"
- fit-margin-right="0"
- fit-margin-bottom="0"
- inkscape:window-width="1920"
- inkscape:window-height="1001"
- inkscape:window-x="0"
- inkscape:window-y="41"
- inkscape:window-maximized="1"
- scale-x="1" />
 <metadata>
 <rdf:RDF>
 <cc:Work
@@ -81,6 +58,7 @@
 <g
  transform="translate(-3.926492e-7,-270.54187)">
 <path
+  fill="currentColor"
  d="m 50.000978,280.44162 -40.1010516,40.10025 40.1010516,40.10025 5.6556,-5.65551 -30.434757,-30.44194 h 64.878253 v -8.0056 H 25.221821 l 30.434757,-30.44001 z" />
 </g>
 </svg>

@@ -99,7 +99,7 @@
 }
 
 .nav-menu-toggle {
-  background: transparent url(../img/octicons-16.svg#view-unfold) no-repeat center / 100% 100%;
+  background: transparent;
   border: none;
   float: right;
   height: 1em;
@@ -111,10 +111,24 @@
   top: calc((var(--nav-line-height) - 1 + 0.5) * 1rem);
   visibility: hidden;
   width: 1em;
+
+  color: var(--navbar-font-color);
 }
 
-.nav-menu-toggle.is-active {
-  background-image: url(../img/octicons-16.svg#view-fold);
+.nav-menu-toggle .nav-menu-toggle-unfold {
+  display: inline;
+}
+
+.nav-menu-toggle .nav-menu-toggle-fold {
+  display: none;
+}
+
+.nav-menu-toggle.is-active .nav-menu-toggle-unfold {
+  display: none;
+}
+
+.nav-menu-toggle.is-active .nav-menu-toggle-fold {
+  display: inline;
 }
 
 .nav-panel-menu.is-active:hover .nav-menu-toggle {
@@ -220,7 +234,14 @@
 
 .nav-panel-explore .context .version::after {
   content: "";
-  background: url(../img/chevron.svg) no-repeat center right / auto 100%;
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%235d5d5d" viewBox="0 0 30 30"%3E<path style="opacity:1;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="M 3.6699219,6.5898438 1.4550781,8.6152344 15,23.374272 28.544922,8.6152344 26.330078,6.5898438 15,18.759498 Z" />%3C/svg%3E') no-repeat center right / auto 100%;
+  width: 1.25em;
+  height: 0.75em;
+}
+
+[data-theme="dark"] .nav-panel-explore .context .version::after {
+  content: "";
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%23cccccc" viewBox="0 0 30 30"%3E<path style="opacity:1;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="M 3.6699219,6.5898438 1.4550781,8.6152344 15,23.374272 28.544922,8.6152344 26.330078,6.5898438 15,18.759498 Z" />%3C/svg%3E') no-repeat center right / auto 100%;
   width: 1.25em;
   height: 0.75em;
 }
