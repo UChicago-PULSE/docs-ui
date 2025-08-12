@@ -147,3 +147,9 @@
   --z-index-page-version-menu: 3;
   --z-index-navbar: 4;
 }
+
+/* Minimal overrides for elements that don't use variables properly */
+html[data-theme="dark"] body {
+  background: var(--body-background) !important;
+  color: var(--body-font-color) !important;
+}
